@@ -1,11 +1,17 @@
+import React from 'react'
 import Link from 'next/link'
 
-import React from 'react'
-
-export default function Inicio() {
+const pages: React.FC = () => {
   return (
-    <div>
-      <Link href='/entrar'>aaa</Link>
-    </div>
+    <>
+      <link rel='shortcut icon' href='../../public/assets/favicon.ico' />
+
+      <div>
+        <div className='w-100 h-screen'>a</div>
+        <>aaa</>
+      </div>
+    </>
   )
 }
+
+export default pages
