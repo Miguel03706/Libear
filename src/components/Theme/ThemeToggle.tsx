@@ -8,7 +8,7 @@ const ThemeToggle: React.FC = () => {
 
   useEffect(() => {
     setTheme('light')
-    setMounted(true)
+    //setMounted(true)
   }, [])
 
   if (!mounted) return null
