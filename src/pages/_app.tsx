@@ -3,7 +3,6 @@ import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
 import './styles/globals.css'
-import Head from 'next/head'
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode
@@ -18,11 +17,8 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   return getLayout(
     <ThemeProvider attribute='class'>
-      <Head>
-        <link rel='icon' href='/favicon.ico' sizes='any' />
-
-        <Component {...pageProps} />
-      </Head>
+      <link rel='icon' href='/favicon.ico' sizes='any' />
+      <Component {...pageProps} />
     </ThemeProvider>,
   )
 }
