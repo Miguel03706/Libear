@@ -8,6 +8,12 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        'primary': ''
+      },
+      fontFamily: {
+        sans: ['Graphik', 'sans-serif'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
