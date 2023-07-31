@@ -17,7 +17,6 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   return getLayout(
     <ThemeProvider attribute='class'>
-      <link rel='icon' href='/favicon.ico' sizes='any' />
       <Component {...pageProps} />
     </ThemeProvider>,
   )

@@ -9,7 +9,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary': ''
+        'primary': '#63c2d1',
+        'secondary': '#2b6cb0',
       },
       fontFamily: {
         sans: ['Graphik', 'sans-serif'],
