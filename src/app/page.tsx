@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Footer from '@/components/Footer/Footer'
 
-const pages: React.FC = () => {
+const Home: React.FC = () => {
   return (
     <div className='overflow-x-hidden'>
       <div className='relative'>
@@ -38,20 +38,20 @@ const pages: React.FC = () => {
       </div>
 
       <div className='mt-20 mb-10 text-center font-bold'>
-        <h1 className='text-3xl text-black'>Libear</h1>
+        <h1 className='text-3xl'>Libear</h1>
       </div>
 
-      <div className='flex flex-wrap md:flex-nowrap text-center md:gap-14 w-screen'>
+      <div className='flex flex-wrap md:flex-nowrap text-center md:gap-14 w-screen items-center justify-center md:space-y-0 space-y-6'>
         <div className='md:p-10'>
           <img
             src='/images/planeta-terra.webp'
             alt='foto de planeta Terra'
-            className='w-72 h-auto'
+            className='w-52 h-auto'
           />
         </div>
-        <div className='md:p-10'>
+        <div className='md:p-10 md:w-2/4'>
           <span className='font-bold'>Ensino de qualidade</span>
-          <p>
+          <p className='text-justify p-4'>
             O jeito mais inovador de aprender idiomas! Aprender com o Libear é
             divertido e viciante. Ganhe pontos ao acertar, corra contra o tempo
             e passe de nível. As nossas aulas são rápidas e eficazes.
@@ -59,17 +59,17 @@ const pages: React.FC = () => {
         </div>
       </div>
 
-      <div className='flex flex-wrap md:flex-nowrap text-center md:gap-14 w-screen'>
+      <div className='flex flex-wrap md:flex-nowrap text-center md:gap-14 w-screen items-center justify-center md:space-y-0 space-y-6'>
         <div className='md:p-10'>
           <img
             src='/images/moeda.webp'
             alt='foto de planeta Terra'
-            className='w-72 h-auto'
+            className='w-52 h-auto'
           />
         </div>
-        <div className='md:p-10 col-span-2'>
+        <div className='md:p-10 md:w-2/4'>
           <span className='font-bold'>Libear Premium</span>
-          <p>
+          <p className='text-justify p-4'>
             Melhore o seu aprendizado com o Libear premium Aprender um idioma no
             Libear é totalmente gratuito, mas você pode remover os anúncios e
             apoiar a educação gratuita com o premium.
@@ -82,4 +82,4 @@ const pages: React.FC = () => {
   )
 }
 
-export default pages
+export default Home
