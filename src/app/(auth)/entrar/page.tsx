@@ -1,7 +1,11 @@
+'use client'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 const Cadastrar: React.FC = () => {
+  const navigate = useRouter()
+
   return (
     <div className='w-screen h-screen flex items-center justify-center'>
       <div className='grid text-center spacing-y-0 w-64'>
@@ -52,6 +56,7 @@ const Cadastrar: React.FC = () => {
             type='submit'
             value='Entrar'
             className='border-2 p-2  bg-cyan-600 hover:bg-opacity-90 text-white py-2 px-4 text-md rounded-lg transition-colors cursor-pointer'
+            onClick={() => navigate.push('/inicio')}
           />
         </div>
         <div className='mt-4'>
