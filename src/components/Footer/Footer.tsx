@@ -16,10 +16,7 @@ const Footer: React.FC = () => {
           <div className='text-sm sm:text-base md:text-lg flex justify-center items-center'>
             Contato@libear.com.br
           </div>
-          <div
-            //className='text-right mr-3 md:text-center'
-            className='flex justify-center items-center'
-          >
+          <div className='flex justify-center items-center'>
             <Link
               href='https://www.instagram.com/libear_librasparatodos/'
               passHref={true}
