@@ -50,7 +50,7 @@ const Cadastrar: React.FC = () => {
         <div className=''>
           <input
             type='submit'
-            value='Cadastrar'
+            value='Entrar'
             className='border-2 p-2  bg-cyan-600 hover:bg-opacity-90 text-white py-2 px-4 text-md rounded-lg transition-colors cursor-pointer'
           />
         </div>
