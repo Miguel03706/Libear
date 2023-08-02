@@ -10,13 +10,16 @@ const Footer: React.FC = () => {
             <img
               src='/icons/logo_urso.webp'
               alt='desenho de um urso polar sorrindo'
-              className='w-20 h-auto'
+              className='w-16 h-auto'
             />
           </div>
-          <div className='text-sm sm:text-base md:text-lg text-center'>
+          <div className='text-sm sm:text-base md:text-lg flex justify-center items-center'>
             Contato@libear.com.br
           </div>
-          <div className='text-right mr-3 md:text-center'>
+          <div
+            //className='text-right mr-3 md:text-center'
+            className='flex justify-center items-center'
+          >
             <Link
               href='https://www.instagram.com/libear_librasparatodos/'
               passHref={true}
