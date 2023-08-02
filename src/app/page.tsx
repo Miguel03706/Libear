@@ -11,7 +11,7 @@ const Home: React.FC = () => {
           className='w-screen h-auto border-b-2 border-black'
           alt='Mascote Libear no gelo'
         />
-        <div className='absolute inset-0 flex gap-2 justify-around items-center md:h-72'>
+        <div className='absolute inset-0 flex gap-2 justify-around items-center md:h-3/5 md:w-11/12 p-3 md:p-0'>
           <div className='w-40 md:w-full h-auto text-white text-center'></div>
           <div className=' w-full h-auto text-white text-center '>
             <div className='text-center'>
