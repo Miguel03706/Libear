@@ -51,7 +51,7 @@ const Home: React.FC = () => {
         </div>
         <div className='md:p-10 md:w-2/4'>
           <span className='font-bold'>Ensino de qualidade</span>
-          <p className='text-justify p-4'>
+          <p className='text-justify-center p-4'>
             O jeito mais inovador de aprender idiomas! Aprender com o Libear é
             divertido e viciante. Ganhe pontos ao acertar, corra contra o tempo
             e passe de nível. As nossas aulas são rápidas e eficazes.
@@ -69,7 +69,7 @@ const Home: React.FC = () => {
         </div>
         <div className='md:p-10 md:w-2/4'>
           <span className='font-bold'>Libear Premium</span>
-          <p className='text-justify p-4'>
+          <p className='text-justify-center p-4'>
             Melhore o seu aprendizado com o Libear premium Aprender um idioma no
             Libear é totalmente gratuito, mas você pode remover os anúncios e
             apoiar a educação gratuita com o premium.
