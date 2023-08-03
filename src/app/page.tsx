@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Footer from '@/components/Footer/Footer'
 
-const Home: React.FC = () => {
+export default function Home() {
   return (
     <div className='overflow-x-hidden'>
       <div className='relative'>
@@ -81,5 +81,3 @@ const Home: React.FC = () => {
     </div>
   )
 }
-
-export default Home

@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 
-const ThemeToggle: React.FC = () => {
+export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
 
@@ -28,5 +28,3 @@ const ThemeToggle: React.FC = () => {
     </button>
   )
 }
-
-export default ThemeToggle
