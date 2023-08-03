@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className='overflow-x-hidden'>
       <div className='relative'>
         <img
-          src='/images/notFound/polar_not_found2.png'
+          src='/images/notFound/polar_not_found4.jpg'
           className='w-screen h-screen'
           alt='Mascote Libear no gelo'
         />
