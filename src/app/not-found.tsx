@@ -6,14 +6,14 @@ export default function NotFound() {
     <div className='overflow-x-hidden'>
       <div className='relative'>
         <img
-          src='/images/notFound/teste3.jpg'
+          src='/images/notFound/404.png'
           className='w-screen h-screen'
           alt='Mascote Libear no gelo'
         />
-        <div className='absolute inset-0 flex gap-2 justify-around items-center '>
-          <div className=' w-full h-auto text-white text-center '>
+        <div className='absolute inset-0 flex  items-center '>
+          <div className=' w-full h-auto text-white text-center'>
             <div className='text-center'>
-              <div className='w-full lg:w-1/2 flex flex-col items-center justify-center lg:px-2 xl:px-0 text-center'>
+              <div className='w-full lg:w-1/2 flex flex-col items-center justify-center lg:px-2 xl:px-0 text-center ml-16'>
                 <p className='text-7xl md:text-8xl lg:text-9xl font-bold tracking-wider text-gray-300'>
                   404
                 </p>
@@ -29,7 +29,6 @@ export default function NotFound() {
                   className='flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-gray-100 px-4 py-2 rounded transition duration-150'
                   title='Retornar'
                 >
-                  {/* trocar para uma imagem do Libear triste na neve */}
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     className='h-5 w-5'
