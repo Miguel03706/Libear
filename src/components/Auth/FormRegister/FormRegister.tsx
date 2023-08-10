@@ -2,7 +2,7 @@ import React from 'react'
 import InputForm from '../Inputs/InputForm'
 import InputLabel from '../Inputs/InputLabel'
 
-export default function FormCadastro() {
+export default function FormRegister() {
   return (
     <>
       <div>

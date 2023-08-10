@@ -1,4 +1,4 @@
-import FormEntrar from '@/components/Auth/FormEntrar/FormEntrar'
+import FormLogin from '@/components/Auth/FormLogin/FormLogin'
 import Link from 'next/link'
 import React from 'react'
 
@@ -15,7 +15,7 @@ export default function Entrar() {
         </div>
         <div className='my-4 text-center w-full'>Entrar</div>
         <div className='text-left'>
-          <FormEntrar />
+          <FormLogin />
         </div>
         <div className='mt-4'>
           Não possui uma conta?{' '}

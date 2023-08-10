@@ -20,7 +20,7 @@ export default function NotFound() {
                 <p className='text-4xl md:text-5xl lg:text-6xl font-bold tracking-wider text-gray-300 mt-2'>
                   Página não encontrada
                 </p>
-                <p className='text-lg md:text-xl lg:text-2xl text-gray-500 my-12'>
+                <p className='text-lg md:text-xl lg:text-2xl text-gray-300 my-12'>
                   Desculpe, a página que você está procurando não foi
                   encontrada.
                 </p>

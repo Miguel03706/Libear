@@ -6,7 +6,7 @@ import InputLabel from '../Inputs/InputLabel'
 
 interface FormEntrarTypes {}
 
-export default function FormEntrar() {
+export default function FormLogin() {
   const navigate = useRouter()
 
   const [email, setEmail] = useState<string>('')
@@ -37,6 +37,7 @@ export default function FormEntrar() {
           placeHolderText='Digite o sua senha'
           type='password'
           required
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <div className='text-center mt-4'>
@@ -44,7 +45,8 @@ export default function FormEntrar() {
             type='submit'
             value='Entrar'
             className='border-2 p-2  bg-cyan-600 hover:bg-opacity-90 text-white py-2 px-4 text-md rounded-lg transition-colors cursor-pointer'
-            onClick={() => handleSubmit(email, password)}
+            //onClick={() => handleSubmit(email, password)}
+            onClick={() => navigate.push('/atividades')}
           />
         </div>
       </div>

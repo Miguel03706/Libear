@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import FormCadastro from '@/components/Auth/FormCadastro/FormCadastro'
+import FormRegister from '@/components/Auth/FormRegister/FormRegister'
 
 export default function Cadastrar() {
   return (
@@ -15,7 +15,7 @@ export default function Cadastrar() {
         </div>
         <div className='my-4'>Cadastrar</div>
         <div className='text-left'>
-          <FormCadastro />
+          <FormRegister />
         </div>
         <div>
           <input
