@@ -24,17 +24,6 @@ interface MenuProps {
 export default function Menu(props: MenuProps) {
   const [open, setOpen] = useState<string | undefined>()
   const [path, setPath] = useState<string | undefined>()
-  // const [count, setCount] = useState<number>(
-  //   Number(Cookies.get('conexaoPerdida')) || 0,
-  // )
-  // const [conexao, setConexao] = useState<string | undefined>(
-  //   Cookies.get('conexao')?.toString(),
-  // )
-
-  // const handleMenu = () => {
-  //   setOpen(open === 'true' ? 'false' : 'true')
-  //   localStorage.setItem('menuOpen', open === 'true' ? 'false' : 'true')
-  // }
 
   useEffect(() => {
     setOpen(localStorage.getItem('menuOpen')?.toString())
@@ -48,21 +37,6 @@ export default function Menu(props: MenuProps) {
     )
     setPath(location.pathname)
   }, [])
-
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     // lógica a ser executada a cada segundo
-  //     if (Cookies.get('conexao') === 'fechada') {
-  //       setConexao('fechada')
-  //       setCount(Number(Cookies.get('conexaoPerdida')))
-  //     } else {
-  //       setConexao('aberta')
-  //     }
-  //   }, 1000)
-
-  //   // Limpa o intervalo quando o componente é desmontado
-  //   return () => clearInterval(intervalId)
-  // }, []) // O segundo argumento (array vazio) garante que o efeito seja executado apenas uma vez durante a montagem inicial do componente
 
   return (
     <div className='container-fluid row'>
@@ -93,34 +67,12 @@ export default function Menu(props: MenuProps) {
         </ul>
         {/* <div className={open === 'true' ? 'foot' : 'foot-active'}>
           <span className='text-sm'>{Cookies.get('sessionEmail')}</span>
-          {conexao?.toString() === 'fechada' ? (
-            <span
-              className='texto-bolinha vermelha'
-              data-count={`${count === 0 ? '' : count}`}
-              data-color='red'
-            ></span>
-          ) : (
-            <>
-              <span
-                className='texto-bolinha verde'
-                data-count={`${count === 0 ? '' : count}`}
-                data-color='chartreuse'
-              ></span>
-            </>
-          )}
         </div> */}
       </div>
 
       <div className={open === 'true' ? 'main' : 'main active'}>
         {/* Barra do topo*/}
         {/* <div className='barra-topo'>
-          <div className='alternar'>
-            <img
-              src={Trocar}
-              alt='diminuir menu'
-              onClick={() => handleMenu()}
-            />
-          </div>
         </div> */}
         <Box
           className={

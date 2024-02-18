@@ -1,10 +1,8 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import InputForm from '../Inputs/InputForm'
 import InputLabel from '../Inputs/InputLabel'
-
-interface FormEntrarTypes {}
 
 export default function FormLogin() {
   const navigate = useRouter()
@@ -12,10 +10,10 @@ export default function FormLogin() {
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
 
-  function handleSubmit(email: string, password: string): void {
-    console.log(email)
-    console.log(password)
-  }
+  // function handleSubmit(email: string, password: string): void {
+  //   console.log(email)
+  //   console.log(password)
+  // }
 
   return (
     <>

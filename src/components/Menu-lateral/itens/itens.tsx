@@ -1,8 +1,6 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import ModalSair from './modal-sair'
 import '../styles.css'
-import Cookies from 'js-cookie'
 import Swal from 'sweetalert2'
 import Link from 'next/link'
 import limparCookies from '@/utils/LimparCookies'
