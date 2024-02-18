@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+  --blackGreen: #27ac58;
+  --lightGreen: #70e000;
+  --white: #fff;
+  --grey: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.navegacao {
+  position: fixed;
+  width: 201px;
+  height: 100%;
+  background-color: var(--white);
+  border-left: 10px solid var(--white);
+  transition: 0.5s;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/*MENU ATIVO OU NÃO*/
+.navegacao.active {
+  width: 61px;
+}
+
+.navegacao ul {
+  position: absolute;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* bordas arredondadas esquerda */
+.navegacao ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  margin-bottom: 8px; /* separar um pouco os itens */
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.navegacao ul li:hover,
+.navegacao ul li.hovered {
+  background-color: var(--white);
+}
+
+.navegacao ul li:nth-child(1) {
+  margin-bottom: 30px !important; /* Distancia do titulo-topo dos itens */
+  pointer-events: none;
+}
+
+.navegacao ul li a {
+  position: relative;
+  width: 100%;
+  height: 50px; /* altura dos itens */
+  display: flex;
+  text-decoration: none;
+  color: var(--black1);
+}
+
+.navegacao ul li:hover a,
+.navegacao ul li.hovered a {
+  color: var(--blackGreen);
+}
+
+/* alinhar icone com o texto */
+.navegacao ul li a .icone {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 40px;
+  line-height: 50px;
+  text-align: center;
+  transition: 0.5s;
+}
+
+/* tamanho do icone (Logo Iavne) */
+.navegacao ul li a .icone img {
+  left: 10px;
+  position: relative;
+  display: block;
+  min-width: 10px;
+  width: 30px;
+  height: auto;
+  line-height: 70px;
+  top: 15px;
+  text-align: center;
+}
+
+/* ver icones dps */
+.navegacao ul li a .icone img {
+  font-size: 1.75rem;
+}
+
+/* texto dos titulo (Empório Iavne) */
+.navegacao ul li a .titulo-topo {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+/* texto dos itens (Pedidos, Produtos e etc) */
+.navegacao ul li a .titulo {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 50px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+/* curvas de fora (cima)*/
+.navegacao ul li.hovered a::before,
+.navegacao ul li:hover a::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 10px !important;
+  height: 50px;
+  background: transparent;
+  border-radius: 25%;
+  box-shadow: 22px 35px 0 20px var(--white); /* Caso a contagem de "NÃO IMPRESSOS" não esteja sendo exibido, mexer aqui */
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+/* curvas de dentro(baixo) */
+.navegacao ul li:hover a::after,
+.navegacao ul li.hovered a::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 10px !important;
+  height: 50px;
+  background: transparent;
+  border-radius: 25%;
+  box-shadow: 22px -35px 0 20px var(--white); /* Caso a contagem de "NÃO IMPRESSOS" não esteja sendo exibido, mexer aqui */
+  pointer-events: none;
+  transition: 0.5s;
+}
+.navegacao.active ul li:hover a::before {
+  width: 40px;
+}
+.navegacao.active ul li a::after {
+  width: 40px;
+}
+
+.foot {
+  color: white;
+  display: flex;
+  text-align: center;
+  justify-content: end;
+  align-items: end;
+  height: 100%;
+  padding-bottom: 25px;
+}
+
+.foot-active {
+  display: none;
+}
+
+/* MAIN */
+.main {
+  position: absolute;
+  width: calc(100% - 200px);
+  left: 200px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+}
+
+.main.active {
+  width: calc(100% - 60px);
+  background-color: var(--white);
+  left: 60px;
+}
+
+.barra-topo {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.alternar img {
+  position: relative;
+  top: 0;
+  width: 40px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+}
+.cardbox {
+  margin: 1rem !important;
+}
+
+.vermelha {
+  --color: red;
+}
+
+.verde {
+  --color: var(--lightGreen);
+}
+
+.texto-bolinha::after {
+  content: attr(data-count);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color); /* Usando uma variável CSS customizada */
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  border-radius: 50%;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+/*MEDIA QUERIES(responsividade)*/
+
+/*991px*/
+@media (max-width: 1000px) {
+  .navegacao {
+    left: -300px;
+  }
+  .navegacao.active {
+    width: 301px;
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main.active {
+    left: 300px;
+  }
+  .cardbox {
+    margin: 10px !important;
+    transition: 0.8s;
+  }
+  .cardbox.active {
+    margin: 3rem !important;
+  }
+  .container-fluid {
+    padding: 0 !important;
+  }
+}
+/*480px*/
+@media (max-width: 600px) {
+  .navegacao {
+    width: 200px !important;
+    left: -100%;
+    z-index: 1000;
+  }
+  .navegacao ul li.hovered a::before,
+  .navegacao ul li:hover a::before {
+    right: -1px;
+  }
+  .navegacao ul li:hover a::after,
+  .navegacao ul li.hovered a::after {
+    right: -1px;
+  }
+
+  .main {
+    position: absolute;
+    width: calc(100%);
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+  }
+
+  .main.active {
+    width: calc(100% - 200px);
+    left: 200px;
+    background-color: var(--white);
+  }
+  .cardbox {
+    margin: 10px !important;
+    transition: 0.8s;
+  }
+  .cardbox.active {
+    margin: 3rem !important;
+  }
+  .container-fluid {
+    padding: 0 !important;
+  }
+}
