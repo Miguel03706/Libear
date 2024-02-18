@@ -2,7 +2,7 @@
 import React, { useEffect, useState, ReactNode } from 'react'
 import { Box } from '@chakra-ui/react'
 import Logo from '../../../public/icons/logo_urso.webp'
-import Cookies from 'js-cookie'
+// import Cookies from 'js-cookie'
 import Itens from './itens'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -23,9 +23,10 @@ interface MenuProps {
 /** Componente para o menu lateral, é preciso definir qual a posição da pagina no menu (item1, item2 e etc) */
 export default function Menu(props: MenuProps) {
   const [open, setOpen] = useState<string | undefined>()
-  const [count, setCount] = useState<number>(
-    Number(Cookies.get('conexaoPerdida')) || 0,
-  )
+  const [path, setPath] = useState<string | undefined>()
+  // const [count, setCount] = useState<number>(
+  //   Number(Cookies.get('conexaoPerdida')) || 0,
+  // )
   // const [conexao, setConexao] = useState<string | undefined>(
   //   Cookies.get('conexao')?.toString(),
   // )
@@ -37,7 +38,7 @@ export default function Menu(props: MenuProps) {
 
   useEffect(() => {
     setOpen(localStorage.getItem('menuOpen')?.toString())
-  }, [location.pathname])
+  }, [path])
 
   useEffect(() => {
     setOpen(
@@ -45,6 +46,7 @@ export default function Menu(props: MenuProps) {
         ? localStorage.getItem('menuOpen')?.toString()
         : 'true',
     )
+    setPath(location.pathname)
   }, [])
 
   // useEffect(() => {
