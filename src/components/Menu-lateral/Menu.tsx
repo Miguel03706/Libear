@@ -22,43 +22,45 @@ interface MenuProps {
 
 /** Componente para o menu lateral, é preciso definir qual a posição da pagina no menu (item1, item2 e etc) */
 export default function Menu(props: MenuProps) {
-  const [open, setOpen] = useState<string | undefined>(
-    localStorage.getItem('menuOpen')
-      ? localStorage.getItem('menuOpen')?.toString()
-      : 'true',
-  )
+  const [open, setOpen] = useState<string | undefined>()
   const [count, setCount] = useState<number>(
     Number(Cookies.get('conexaoPerdida')) || 0,
   )
-  const [conexao, setConexao] = useState<string | undefined>(
-    Cookies.get('conexao')?.toString(),
-  )
+  // const [conexao, setConexao] = useState<string | undefined>(
+  //   Cookies.get('conexao')?.toString(),
+  // )
 
-  const handleMenu = () => {
-    setOpen(open === 'true' ? 'false' : 'true')
-    localStorage.setItem('menuOpen', open === 'true' ? 'false' : 'true')
-  }
+  // const handleMenu = () => {
+  //   setOpen(open === 'true' ? 'false' : 'true')
+  //   localStorage.setItem('menuOpen', open === 'true' ? 'false' : 'true')
+  // }
 
   useEffect(() => {
     setOpen(localStorage.getItem('menuOpen')?.toString())
   }, [location.pathname])
 
-  useEffect(() => {}, [Cookies.get('conexao')])
-
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      // lógica a ser executada a cada segundo
-      if (Cookies.get('conexao') === 'fechada') {
-        setConexao('fechada')
-        setCount(Number(Cookies.get('conexaoPerdida')))
-      } else {
-        setConexao('aberta')
-      }
-    }, 1000)
+    setOpen(
+      localStorage.getItem('menuOpen')
+        ? localStorage.getItem('menuOpen')?.toString()
+        : 'true',
+    )
+  }, [])
 
-    // Limpa o intervalo quando o componente é desmontado
-    return () => clearInterval(intervalId)
-  }, []) // O segundo argumento (array vazio) garante que o efeito seja executado apenas uma vez durante a montagem inicial do componente
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     // lógica a ser executada a cada segundo
+  //     if (Cookies.get('conexao') === 'fechada') {
+  //       setConexao('fechada')
+  //       setCount(Number(Cookies.get('conexaoPerdida')))
+  //     } else {
+  //       setConexao('aberta')
+  //     }
+  //   }, 1000)
+
+  //   // Limpa o intervalo quando o componente é desmontado
+  //   return () => clearInterval(intervalId)
+  // }, []) // O segundo argumento (array vazio) garante que o efeito seja executado apenas uma vez durante a montagem inicial do componente
 
   return (
     <div className='container-fluid row'>
