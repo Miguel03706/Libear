@@ -1,0 +1,43 @@
+.info-user-stack-section {
+    width: 100%;
+    height: 10vh;
+    z-index: 1000;
+    margin-bottom: 5px solid #000 !important;
+
+    font: 'Nunito', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    .grid-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        height: 100%;
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            img {
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+        .fire-text-on {
+            color: #f95352;
+        }
+
+        .fire-text-off {
+            color: #adadad;
+        }
+
+        .crystal-text {
+            color: #76e3f6;
+        }
+
+        .hearth-text {
+            color: #ff0100;
+        }
+    }
+}

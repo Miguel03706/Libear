@@ -9,6 +9,7 @@ import MissionIcon from 'public/icons/missoes.webp'
 import ConfigIcon from 'public/icons/config.webp'
 import InicioIcon from 'public/icons/inicio.webp'
 import StoreIcon from 'public/icons/loja.webp'
+import InfoUserStack from '@/components/InfoUserStack/InfoUserStack'
 
 export default function Atividades() {
   return (
@@ -21,7 +22,12 @@ export default function Atividades() {
         <StackItem icon={PerfilIcon} redirect='/perfil'>Perfil</StackItem>
       </StackItens>
       <div>
-        <>teste</>
+        <InfoUserStack
+          onFire={true}
+          fire={1}
+          crystal={1}
+          hearth={1}
+        />
         <SectionActivities>
           <div className='h-screen'>Atividades</div>
         </SectionActivities>
