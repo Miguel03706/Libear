@@ -10,6 +10,7 @@ import ConfigIcon from 'public/icons/config.webp'
 import InicioIcon from 'public/icons/inicio.webp'
 import StoreIcon from 'public/icons/loja.webp'
 import InfoUserStack from '@/components/InfoUserStack/InfoUserStack'
+import ActivitiesRoad from '@/components/SectionActivities/ActivitiesRoad/ActivitiesRoad'
 
 export default function Atividades() {
   return (
@@ -29,7 +30,7 @@ export default function Atividades() {
           hearth={1}
         />
         <SectionActivities>
-          <div className='h-screen'>Atividades</div>
+          <ActivitiesRoad />
         </SectionActivities>
         <SectionInfo />
       </div>
