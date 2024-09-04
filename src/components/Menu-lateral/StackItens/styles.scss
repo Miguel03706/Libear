@@ -1,0 +1,30 @@
+.stack-itens {
+  align-items: center;
+  background: rgb(var(--color-snow));
+  border-top: 2px solid var(--black1);
+  box-sizing: border-box;
+  display: flex;
+  gap: 12px;
+  height: 15vh;
+  justify-content: space-between;
+  padding: 16px;
+
+  .stack-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
+
+    .icon {
+      width: 48px !important;
+      height: 48px !important;
+      border: 2px solid var(--transparentBlue1);
+      border-radius: 10px;
+      background-color: var(--transparentBlue2);
+    }
+
+    .title {
+      display: none;
+    }
+  }
+}
