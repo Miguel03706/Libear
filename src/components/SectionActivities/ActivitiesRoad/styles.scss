@@ -1,4 +1,28 @@
 .activities-road-section {
     height: 100%;
     width: 100%;
+
+    .list-activities {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 20px;
+        align-items: center;
+        justify-content: center;
+
+        .lesson {
+            .progress-bar {
+                border: 5px solid #e5de2f;
+                border-radius: 50%;
+                position: relative;
+                border-image: linear-gradient(
+                        to right,
+                        #e5de2f var(--progress),
+                        transparent var(--progress)
+                    )
+                    30 / 19px round;
+                border-image-slice: 1;
+            }
+        }
+    }
 }
