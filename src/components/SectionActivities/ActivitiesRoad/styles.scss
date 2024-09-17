@@ -1,3 +1,40 @@
+.current-card {
+    position: absolute;
+    width: 80vw;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 1000;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.unidade-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--black2);
+    line-height: 26.6px;
+    margin: 0 16px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.unidade-title::before,
+.unidade-title::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--black2);
+    margin: 0 8px;
+}
+
 .roadmap {
     display: flex;
     flex-direction: column;

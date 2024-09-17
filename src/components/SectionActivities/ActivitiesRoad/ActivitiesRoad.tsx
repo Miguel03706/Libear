@@ -6,8 +6,11 @@ import Activities from './activities.json'
 
 export default function ActivitiesRoad() {
     const [color, setColor] = useState('#E5DE2F');
+    const [currentSection, setCurrentSection] = useState(0);
+    const [currentUnit, setCurrentUnit] = useState(0);
+    const [currentTitle, setCurrenntTitle] = useState("Alfabeto");
 
-    const contentStyle = (index: number) => {
+    const roadmapStyle = (index: number) => {
         const positionInGroup = index % 4;
         const baseMargin = 2; // Base margin increment
         let marginLeft = '0rem';
@@ -31,7 +34,29 @@ export default function ActivitiesRoad() {
         };
     };
 
+    const handleScroll = () => {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach((section, index) => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= 0 && rect.bottom >= 0) {
+                setCurrentSection(index);
+                const units = section.querySelectorAll('.unit');
+                units.forEach((unit, unitIndex) => {
+                    const unitRect = unit.getBoundingClientRect();
+                    if (unitRect.top <= 0 && unitRect.bottom >= 0) {
+                        setCurrentUnit(unitIndex);
+                    }
+                });
+            }
+        });
+    };
+
+
     useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     useEffect(() => {
@@ -45,17 +70,36 @@ export default function ActivitiesRoad() {
     return (
         <div className='activities-road-section'>
             {
-                Activities.map((activity, index) => {
-                    return (
-                        <div className="roadmap" key={activity.id}>
-                            <div className={`roadmap-item ${index % 2 ? 'left' : 'right'}`} style={contentStyle(index)}>
-                                <div className="content">
-                                    <Image src={`/icons/activitys/${activity.image}.webp`} alt={activity.title} w={84} h={84} />
-                                </div>
-                            </div>
+                Activities.secao.map((secao, secaoIndex) => (
+                    <div key={`secao-${secaoIndex}`} className="section">
+                        <div className='current-card' style={{ backgroundColor: secao.background }}>
+                            <p>
+                                Seção {currentSection + 1}, Unidade {currentUnit + 1}
+                            </p>
+                            <p>
+                                {currentTitle}
+                            </p>
                         </div>
-                    );
-                })
+                        {
+                            secao.unidade.map((unidade, unidadeIndex) => (
+                                <div key={`unidade-${unidadeIndex}`} className="unit">
+                                    <div className="unidade-title">{unidade.titulo}</div>
+                                    {
+                                        unidade.atividades.map((activity, activityIndex) => (
+                                            <div className="roadmap" key={activity.id}>
+                                                <div className={`roadmap-item ${activityIndex % 2 ? 'left' : 'right'}`} style={roadmapStyle(activityIndex)}>
+                                                    <div className="content">
+                                                        <Image src={`/icons/activitys/${activity.image}.webp`} alt={activity.title} w={84} h={84} />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+                            ))
+                        }
+                    </div>
+                ))
             }
         </div>
     );
