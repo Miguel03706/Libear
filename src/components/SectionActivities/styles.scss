@@ -1,28 +1,27 @@
 .section-activities {
-  width: 100vw;
-  min-height: 75vh;
-  max-height: 75vh;
-  background-color: var(--grey);
-  overflow-y: scroll;
-  box-sizing: border-box;
+    width: 100vw;
+    min-height: 75vh;
+    max-height: 75vh;
+    overflow-y: scroll;
+    box-sizing: border-box;
 }
 
 /* Estilização do Scrollbar */
 .section-activities::-webkit-scrollbar {
-  width: 12px;
+    width: 12px;
 }
 
 .section-activities::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
+    background: #f1f1f1;
+    border-radius: 10px;
 }
 
 .section-activities::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 10px;
-  border: 3px solid #f1f1f1;
+    background-color: #888;
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
 }
 
 .section-activities::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
+    background-color: #555;
 }
