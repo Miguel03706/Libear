@@ -5,10 +5,10 @@ import { Image } from '@chakra-ui/react';
 import Activities from './activities.json'
 
 export default function ActivitiesRoad() {
-    const [color, setColor] = useState('#E5DE2F');
+    // const [color, setColor] = useState('#E5DE2F');
     const [currentSection, setCurrentSection] = useState(0);
     const [currentUnit, setCurrentUnit] = useState(0);
-    const [currentTitle, setCurrenntTitle] = useState("Alfabeto");
+    const [currentTitle, setCurrenntTitle] = useState("");
 
     const roadmapStyle = (index: number) => {
         const positionInGroup = index % 4;
@@ -57,15 +57,17 @@ export default function ActivitiesRoad() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
+
+        setCurrenntTitle("Alfabeto")
     }, []);
 
-    useEffect(() => {
-        if (localStorage.getItem('chakra-ui-color-mode') === "dark") {
-            setColor('#49CFE1');
-        } else {
-            setColor('#E5DE2F');
-        }
-    }, [setColor]);
+    // useEffect(() => {
+    //     if (localStorage.getItem('chakra-ui-color-mode') === "dark") {
+    //         setColor('#49CFE1');
+    //     } else {
+    //         setColor('#E5DE2F');
+    //     }
+    // }, [setColor]);
 
     return (
         <div className='activities-road-section'>
