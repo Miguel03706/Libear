@@ -1,28 +1,43 @@
-.activities-road-section {
-    height: 100%;
-    width: 100%;
+.roadmap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
 
-    .list-activities {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-top: 20px;
-        align-items: center;
-        justify-content: center;
+.roadmap-item {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 10px 0;
+    position: relative;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideIn 1s forwards ease-out;
+}
 
-        .lesson {
-            .progress-bar {
-                border: 5px solid #e5de2f;
-                border-radius: 50%;
-                position: relative;
-                border-image: linear-gradient(
-                        to right,
-                        #e5de2f var(--progress),
-                        transparent var(--progress)
-                    )
-                    30 / 19px round;
-                border-image-slice: 1;
-            }
-        }
+.roadmap-item.left {
+    animation-delay: 0.5s;
+}
+
+.roadmap-item.right {
+    animation-delay: 1s;
+    transform: translateX(100%);
+}
+
+.roadmap-item.right::before {
+    right: -15px;
+}
+
+.roadmap-item.left::before {
+    left: -15px;
+}
+
+/* Animação de transição */
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
