@@ -12,27 +12,33 @@
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-.unidade-title {
-    font-size: 19px;
-    font-weight: 700;
-    color: var(--black2);
-    line-height: 26.6px;
-    margin: 0 16px;
-    text-align: center;
-    font-family: 'Nunito', sans-serif;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.section {
+    &:first-child {
+        margin-top: 5rem;
+    }
 }
+.unit {
+    .unit-title {
+        font-size: 19px;
+        font-weight: 700;
+        color: var(--black2);
+        line-height: 26.6px;
+        margin: 0 16px;
+        text-align: center;
+        font-family: 'Nunito', sans-serif;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-.unidade-title::before,
-.unidade-title::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px solid var(--black2);
-    margin: 0 8px;
+        &::before,
+        &::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid var(--black2);
+            margin: 0 8px;
+        }
+    }
 }
 
 .roadmap {

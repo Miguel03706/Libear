@@ -8,6 +8,9 @@ interface Activity {
     id: string;
     image: string;
     title: string;
+    description: string;
+    link: string;
+    progress: number;
 }
 
 interface Unidade {
@@ -23,7 +26,7 @@ interface ActivitiesProps {
     secao: Secao[];
 }
 
-export default function ActivitiesRoad() {
+export default function ActivitiesRoad(props: ActivitiesProps) {
     // const [color, setColor] = useState('#E5DE2F');
     const [currentSection, setCurrentSection] = useState(0);
     const [currentUnit, setCurrentUnit] = useState(0);
@@ -60,6 +63,7 @@ export default function ActivitiesRoad() {
         setCurrentTitle("TESTE")
         setCurrentUnit(0)
         setCurrentColor("#E5DE2F")
+        console.log(props.secao)
     }, []);  // Garantir que o listener seja adicionado apenas uma vez
 
     // useEffect(() => {
@@ -86,8 +90,8 @@ export default function ActivitiesRoad() {
                         <div key={`secao-${secaoIndex}`} className="section">
                             {
                                 secao.unidade.map((unidade, unidadeIndex) => (
-                                    <div key={`unidade-${unidadeIndex}`} className="unit">
-                                        <div className="unidade-title">{unidade.titulo}</div>
+                                    <div key={`unit-${unidadeIndex}`} className="unit">
+                                        <div className="unit-title">{unidade.titulo}</div>
                                         {
                                             unidade.atividades.map((activity, activityIndex) => (
                                                 <div className="roadmap" key={activity.id}>
