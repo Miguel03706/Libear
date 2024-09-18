@@ -30,7 +30,7 @@ export default function Atividades() {
           hearth={1}
         />
         <SectionActivities>
-          <ActivitiesRoad />
+          <ActivitiesRoad atividades={[]}/>
         </SectionActivities>
         <SectionInfo />
       </div>

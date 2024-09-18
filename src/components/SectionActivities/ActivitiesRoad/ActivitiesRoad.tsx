@@ -23,7 +23,7 @@ interface Secao {
 }
 
 interface ActivitiesProps {
-    secao: Secao[];
+    atividades: Secao[];
 }
 
 export default function ActivitiesRoad(props: ActivitiesProps) {
@@ -63,7 +63,7 @@ export default function ActivitiesRoad(props: ActivitiesProps) {
         setCurrentTitle("TESTE")
         setCurrentUnit(0)
         setCurrentColor("#E5DE2F")
-        console.log(props.secao)
+        console.log(props.atividades)
     }, []);  // Garantir que o listener seja adicionado apenas uma vez
 
     // useEffect(() => {
