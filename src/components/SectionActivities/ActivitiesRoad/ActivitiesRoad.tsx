@@ -1,14 +1,35 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import "./styles.scss";
 import { Image } from '@chakra-ui/react';
 import Activities from './activities.json'
+
+interface Activity {
+    id: string;
+    image: string;
+    title: string;
+}
+
+interface Unidade {
+    titulo: string;
+    atividades: Activity[];
+}
+
+interface Secao {
+    unidade: Unidade[];
+}
+
+interface ActivitiesProps {
+    secao: Secao[];
+}
 
 export default function ActivitiesRoad() {
     // const [color, setColor] = useState('#E5DE2F');
     const [currentSection, setCurrentSection] = useState(0);
     const [currentUnit, setCurrentUnit] = useState(0);
-    const [currentTitle, setCurrenntTitle] = useState("");
+    const [currentTitle, setCurrentTitle] = useState("");
+    const [currentColor, setCurrentColor] = useState("");
+    const roadSectionRef = useRef<HTMLDivElement>(null);
 
     const roadmapStyle = (index: number) => {
         const positionInGroup = index % 4;
@@ -34,32 +55,12 @@ export default function ActivitiesRoad() {
         };
     };
 
-    const handleScroll = () => {
-        const sections = document.querySelectorAll('.section');
-        sections.forEach((section, index) => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= 0 && rect.bottom >= 0) {
-                setCurrentSection(index);
-                const units = section.querySelectorAll('.unit');
-                units.forEach((unit, unitIndex) => {
-                    const unitRect = unit.getBoundingClientRect();
-                    if (unitRect.top <= 0 && unitRect.bottom >= 0) {
-                        setCurrentUnit(unitIndex);
-                    }
-                });
-            }
-        });
-    };
-
-
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-
-        setCurrenntTitle("Alfabeto")
-    }, []);
+        setCurrentSection(0)
+        setCurrentTitle("TESTE")
+        setCurrentUnit(0)
+        setCurrentColor("#E5DE2F")
+    }, []);  // Garantir que o listener seja adicionado apenas uma vez
 
     // useEffect(() => {
     //     if (localStorage.getItem('chakra-ui-color-mode') === "dark") {
@@ -70,39 +71,41 @@ export default function ActivitiesRoad() {
     // }, [setColor]);
 
     return (
-        <div className='activities-road-section'>
-            {
-                Activities.secao.map((secao, secaoIndex) => (
-                    <div key={`secao-${secaoIndex}`} className="section">
-                        <div className='current-card' style={{ backgroundColor: secao.background }}>
-                            <p>
-                                Seção {currentSection + 1}, Unidade {currentUnit + 1}
-                            </p>
-                            <p>
-                                {currentTitle}
-                            </p>
-                        </div>
-                        {
-                            secao.unidade.map((unidade, unidadeIndex) => (
-                                <div key={`unidade-${unidadeIndex}`} className="unit">
-                                    <div className="unidade-title">{unidade.titulo}</div>
-                                    {
-                                        unidade.atividades.map((activity, activityIndex) => (
-                                            <div className="roadmap" key={activity.id}>
-                                                <div className={`roadmap-item ${activityIndex % 2 ? 'left' : 'right'}`} style={roadmapStyle(activityIndex)}>
-                                                    <div className="content">
-                                                        <Image src={`/icons/activitys/${activity.image}.webp`} alt={activity.title} w={84} h={84} />
+        <div ref={roadSectionRef} style={{ overflowX: "hidden" }}>
+            <div className='current-card' style={{ background: currentColor }}>
+                <p>
+                    Seção {currentSection + 1}, Unidade {currentUnit + 1}
+                </p>
+                <p>
+                    {currentTitle}
+                </p>
+            </div>
+            <div className='activities-road-section' >
+                {
+                    Activities.secao.map((secao, secaoIndex) => (
+                        <div key={`secao-${secaoIndex}`} className="section">
+                            {
+                                secao.unidade.map((unidade, unidadeIndex) => (
+                                    <div key={`unidade-${unidadeIndex}`} className="unit">
+                                        <div className="unidade-title">{unidade.titulo}</div>
+                                        {
+                                            unidade.atividades.map((activity, activityIndex) => (
+                                                <div className="roadmap" key={activity.id}>
+                                                    <div className={`roadmap-item ${activityIndex % 2 ? 'left' : 'right'}`} style={roadmapStyle(activityIndex)}>
+                                                        <div className="content">
+                                                            <Image src={`/icons/activitys/${activity.image}.webp`} alt={activity.title} w={84} h={84} />
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        ))
-                                    }
-                                </div>
-                            ))
-                        }
-                    </div>
-                ))
-            }
+                                            ))
+                                        }
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    ))
+                }
+            </div>
         </div>
     );
 }
